@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; -webkit-text-stroke: #000000; min-height: 18.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="zh-CN"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;SHTI社会学人格测试&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;600&amp;display=swap');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Noto Sans SC', sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #f8f5f0 0%, #e8e4dc 100%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>min-height: 100vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.serif {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Noto Serif SC', serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.option-card {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid transparent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.option-card:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-color: #4a5568;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.progress-bar {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: width 0.5s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.fade-in {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>animation: fadeIn 0.5s ease-in;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@keyframes fadeIn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(20px); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.result-card {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, #ffffff 0%, #f8f5f0 100%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.share-btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.share-btn:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: scale(1.05);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body class="py-8 px-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-2xl mx-auto"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- 首页 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="home-page" class="fade-in"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h1 class="serif text-5xl md:text-6xl font-bold text-gray-800 mb-4"&gt;SHTI&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p class="text-xl md:text-2xl text-gray-600 mb-2"&gt;社会学人格测试&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="w-24 h-1 bg-gray-400 mx-auto my-6"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-500 max-w-md mx-auto leading-relaxed"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>16道日常题，解锁你灵魂里住着的社会学大师&lt;br&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>无专业门槛，凭第一直觉选择即可</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="startTest()"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>class="bg-gray-800 text-white px-12 py-4 rounded-full text-lg font-medium hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>开始测试</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="mt-16 text-center text-gray-400 text-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Sociological Human Type Indicator&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- 答题页 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="quiz-page" class="hidden fade-in"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- 进度条 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between text-sm text-gray-500 mb-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span&gt;第 &lt;span id="current-q"&gt;1&lt;/span&gt;/16 题&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span id="progress-text"&gt;6%&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="w-full bg-gray-200 rounded-full h-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div id="progress-bar" class="progress-bar bg-gray-700 h-2 rounded-full" style="width: 6%"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- 题目 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h2 id="question-text" class="serif text-2xl md:text-3xl font-semibold text-gray-800 leading-relaxed"&gt;&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- 选项 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="options-container" class="space-y-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- 选项会动态插入这里 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- 结果页 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="result-page" class="hidden fade-in"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="result-content" class="result-card rounded-3xl shadow-2xl p-8 md:p-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- 结果内容会动态插入这里 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- 分享区域 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="mt-8 space-y-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- 生成海报按钮 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="generatePoster()"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>class="share-btn w-full bg-green-600 text-white py-4 rounded-2xl font-medium text-lg shadow-lg flex items-center justify-center gap-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;path d="M18.5 15.5a2.5 2.5 0 0 0 1.54-4.5A2.5 2.5 0 0 0 15 8.5a2.5 2.5 0 0 0-4.5 1.54 2.5 2.5 0 0 0 0 3.92A2.5 2.5 0 0 0 15 15.5a2.5 2.5 0 0 0 3.5-1.54z"/&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>生成海报 · 分享朋友圈</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- 二维码分享 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white rounded-2xl p-6 shadow-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-center text-gray-700 font-medium mb-4"&gt;扫码分享给朋友&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div id="qrcode"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- 重新测试 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="restartTest()"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>class="w-full bg-gray-100 text-gray-700 py-4 rounded-2xl font-medium hover:bg-gray-200 transition-all"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>重新测试</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- 海报预览页 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="poster-page" class="hidden fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="bg-white rounded-3xl max-w-md w-full overflow-hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div id="poster-content" class="p-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- 海报内容会动态插入这里 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="p-6 bg-gray-50 flex gap-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="closePoster()"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>class="flex-1 py-3 rounded-xl bg-gray-200 text-gray-700 font-medium"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>关闭</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="downloadPoster()"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>class="flex-1 py-3 rounded-xl bg-gray-800 text-white font-medium"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>保存图片</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 测试数据</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const questions = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 1, text: "朋友努力很久没升职，你第一反应是？", options: ["大环境不行，行业规则太苛刻", "公司晋升机制卡得太死", "他可以调整下工作方法", "是他的个人能力没匹配到位"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 1, text: "普通人拍短视频爆火，你第一反应是？", options: ["踩中了平台的流量风口", "赶上了当下的内容趋势", "博主有自己的过人之处", "全靠博主的个人能力和特色"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 1, text: "同学考研二战落榜，你会怎么安慰？", options: ["今年报考人数太多，大环境太难", "分数线暴涨，不是他的问题", "咱们复盘调整，下次再试", "换个赛道，说不定更适合他"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 1, text: "选新工作，你最看重？", options: ["行业前景和公司稳定性", "薪资福利和硬性保障", "能不能学到东西，有成长", "自己喜不喜欢，开不开心"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 2, text: "外卖员超时被投诉上热搜，你第一反应是？", options: ["平台规则太恶心，压榨骑手", "顾客太苛刻，完全不懂体谅", "先看看完整的事情经过", "想知道双方各自的难处"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 2, text: "网上有人和你观点完全相反，你会？", options: ["这人三观有问题，太离谱", "站着说话不腰疼，太自私", "好奇他为什么会这么想", "想了解他的经历和信息来源"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 2, text: "朋友和对象吵架找你哭诉，你会？", options: ["立刻站队，帮他骂对方", "对方太过分，完全不体谅人", "先听完整件事的来龙去脉", "想知道双方吵架的核心原因"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 2, text: "看社会新闻/纪录片，你核心想？", options: ["看到不公，找到改变的方法", "认清问题，为弱者发声", "看懂世界的不同面", "了解不同人的生活和想法"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 3, text: "组队做项目，你觉得成功的核心是？", options: ["大家目标一致，互相信任", "团队氛围好，愿意互相配合", "分工明确，权责清晰", "利益分配合理，奖惩明确"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 3, text: "和朋友旅行闹矛盾，你会怎么解决？", options: ["坐下来好好聊，互相体谅", "照顾彼此的感受，各退一步", "提前定好规则，按规则来", "分清权责，谁的问题谁负责"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 3, text: "小区业主和物业起冲突，你觉得该怎么解决？", options: ["业主先统一意见，达成共识", "大家好好沟通，互相理解", "选代表和物业谈判博弈", "用规则维权，争取最大利益"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 3, text: "班级/公司定新规则，你觉得核心是？", options: ["大家都认可，才会自觉遵守", "符合所有人的核心诉求", "明确奖惩，违规就有惩罚", "规则清晰，没有模糊地带"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 4, text: "校园霸凌频发，你觉得根源解决办法是？", options: ["出台严格的惩戒制度，加强监管", "明确霸凌后果，零容忍处理", "改变校园风气，做价值观引导", "让孩子理解尊重，找到自我价值"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 4, text: "选城市定居，你最看重？", options: ["房价、医疗、教育等硬资源", "工资水平和发展机会", "城市的文化氛围和生活节奏", "有没有合得来的朋友，过得开心"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 4, text: "看一部电影，你最容易被什么戳中？", options: ["时代对普通人命运的塑造", "现实环境对人生的影响", "主角的内心成长与情感表达", "主角对人生意义的追寻"] },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ dimension: 4, text: "朋友结婚纠结办不办婚礼，你会建议？", options: ["先算好预算和收支的账", "看双方家庭的习俗和要求", "看你们自己想不想要", "看婚礼有没有专属纪念意义"] }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const personalities = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"SCFI": { name: "马克思型", title: "时代破壁人", tags: ["清醒反抗者", "弱者发声者", "理想实干家"], desc: "天生能看透环境里的不公与结构性困境，永远站在弱势者一边，爱憎分明，有极强的原则性，坚信看懂世界是为了改变世界。", slogan: "为弱者发声，为公平奔走" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"SEUI": { name: "涂尔干型", title: "秩序守护者", tags: ["理性务实者", "规则搭建者", "团队定盘星"], desc: "极致理性严谨，坚信秩序来自共识与规则，做事沉稳可靠，擅长协调混乱局面，给身边人满满的安全感。", slogan: "以规则筑秩序，以共识聚人心" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"AEUM": { name: "戈夫曼型", title: "人间观察家", tags: ["细腻共情者", "社交艺术家", "温柔生活家"], desc: "情商拉满，能精准捕捉人际间的微妙情绪，擅长倾听共情，尊重每个人的独特性，看透社交套路仍选择真诚待人。", slogan: "于日常见人心，于烟火寻意义" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"ACFM": { name: "福柯型", title: "规训破壁人", tags: ["叛逆解构者", "自由先行者", "边界开拓者"], desc: "对主流规训、刻板标准天生警惕，拒绝随波逐流，坚定捍卫多元与少数群体的权利，一生追求精神自由与自我定义。", slogan: "拒绝被定义，一生都自由" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"SCFM": { name: "布迪厄型", title: "阶层解码者", tags: ["通透洞察者", "规则拆解人", "清醒处世者"], desc: "双重视野看透社会隐形壁垒，既懂阶层规则的束缚，也懂文化审美的隐形权力，为人圆融不世故，清醒不随流。", slogan: "看透世事规则，守住自我本心" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"SEUM": { name: "韦伯型", title: "理性集大成者", tags: ["全能理性者", "六边形战士", "平衡掌控者"], desc: "拒绝非黑即白的极端思维，既能看清环境约束，也相信个人力量，在理想与现实间找到完美平衡，是团队的智囊与调停者。", slogan: "认清世界真相，依然热爱生活" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"AEFI": { name: "帕森斯型", title: "系统搭建者", tags: ["严谨架构师", "全局规划者", "稳定操盘手"], desc: "拥有极致系统思维，擅长把复杂事务拆解成清晰模块，搭建高效运转的规则体系，做事规划性拉满，永远有预案。", slogan: "以系统谋全局，以架构定未来" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"ACEFIM": { name: "贝克型", title: "风险领航者", tags: ["时代先行者", "风险吹哨人", "不确定里的光"], desc: "对时代变化与潜在风险有极强前瞻性，拥抱不确定性，既懂自由的珍贵，也担得起自由的责任，在变化中活出自己的确定性。", slogan: "于不确定中，活出自带的光芒" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 游戏状态</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let currentQuestion = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let scores = { S: 0, A: 0, C: 0, E: 0, U: 0, F: 0, I: 0, M: 0 };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dimensionMap = { 1: ['S', 'A'], 2: ['C', 'E'], 3: ['U', 'F'], 4: ['I', 'M'] };</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 开始测试</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function startTest() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('home-page').classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('quiz-page').classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showQuestion();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 显示题目</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function showQuestion() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const q = questions[currentQuestion];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('current-q').textContent = currentQuestion + 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const progress = ((currentQuestion + 1) / 16) * 100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('progress-bar').style.width = progress + '%';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('progress-text').textContent = Math.round(progress) + '%';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('question-text').textContent = q.text;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const container = document.getElementById('options-container');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>container.innerHTML = '';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>q.options.forEach((opt, i) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const div = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>div.className = 'option-card bg-white p-5 rounded-2xl cursor-pointer shadow-md';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>div.innerHTML = `&lt;span class="text-gray-400 font-medium mr-3"&gt;${String.fromCharCode(9312 + i)}&lt;/span&gt;&lt;span class="text-gray-700"&gt;${opt}&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>div.onclick = () =&gt; selectOption(i);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>container.appendChild(div);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 选择选项</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function selectOption(index) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const q = questions[currentQuestion];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const [left, right] = dimensionMap[q.dimension];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (index === 0) scores[left] += 2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>else if (index === 1) scores[left] += 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>else if (index === 2) scores[right] += 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>else scores[right] += 2;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentQuestion++;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (currentQuestion &lt; 16) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showQuestion();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showResult();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 计算结果</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function calculateResult() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const d1 = scores.S &gt;= scores.A ? 'S' : 'A';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const d2 = scores.C &gt;= scores.E ? 'C' : 'E';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const d3 = scores.U &gt;= scores.F ? 'U' : 'F';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const d4 = scores.I &gt;= scores.M ? 'I' : 'M';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let code = d1 + d2 + d3 + d4;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (!personalities[code]) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const balanced = [scores.S === scores.A, scores.C === scores.E, scores.U === scores.F, scores.I === scores.M];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (balanced.filter(b =&gt; b).length &gt;= 2) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>code = 'SEUM';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>code = 'ACEFIM';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return personalities[code];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 显示结果</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function showResult() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const result = calculateResult();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('quiz-page').classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('result-page').classList.remove('hidden');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const resultContent = document.getElementById('result-content');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>resultContent.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-500 text-sm mb-2"&gt;你的社会学人格是&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="serif text-4xl md:text-5xl font-bold text-gray-800 mb-2"&gt;${result.name}&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xl text-gray-600"&gt;${result.title}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-wrap justify-center gap-2 mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>${result.tags.map(tag =&gt; `&lt;span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm"&gt;${tag}&lt;/span&gt;`).join('')}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-gray-50 rounded-2xl p-6 mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-700 leading-relaxed"&gt;${result.desc}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="serif text-lg text-gray-800 font-semibold italic"&gt;"${result.slogan}"&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>QRCode.toCanvas(document.createElement('canvas'), window.location.href, { width: 150, margin: 2 }, function(error, canvas) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (error) console.error(error);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const qrcodeDiv = document.getElementById('qrcode');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>qrcodeDiv.innerHTML = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>canvas.className = 'rounded-lg shadow-md';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>qrcodeDiv.appendChild(canvas);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 生成海报</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function generatePoster() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const result = calculateResult();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const posterContent = document.getElementById('poster-content');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>posterContent.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h1 class="serif text-3xl font-bold text-gray-800 mb-1"&gt;SHTI&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-500"&gt;社会学人格测试&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-500 text-sm mb-2"&gt;我的社会学人格是&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h2 class="serif text-4xl font-bold text-gray-800 mb-2"&gt;${result.name}&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg text-gray-600"&gt;${result.title}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-wrap justify-center gap-2 mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>${result.tags.map(tag =&gt; `&lt;span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs"&gt;${tag}&lt;/span&gt;`).join('')}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-gray-50 rounded-xl p-5 mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700 text-sm leading-relaxed"&gt;${result.desc}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="serif text-base text-gray-800 font-semibold italic mb-8"&gt;"${result.slogan}"&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center justify-center gap-4 pt-4 border-t border-gray-200"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div id="poster-qrcode"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="text-left"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-gray-700 font-medium"&gt;扫码测测你的人格&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p class="text-xs text-gray-500"&gt;SHTI社会学人格测试&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('poster-page').classList.remove('hidden');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>QRCode.toCanvas(document.createElement('canvas'), window.location.href, { width: 80, margin: 1 }, function(error, canvas) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (error) console.error(error);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const qrcodeDiv = document.getElementById('poster-qrcode');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>qrcodeDiv.innerHTML = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>canvas.className = 'rounded';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>qrcodeDiv.appendChild(canvas);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 下载海报</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function downloadPoster() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const poster = document.getElementById('poster-content');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>html2canvas(poster, { scale: 2, backgroundColor: '#ffffff' }).then(canvas =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const link = document.createElement('a');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>link.download = 'SHTI社会学人格测试结果.png';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>link.href = canvas.toDataURL('image/png');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>link.click();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 关闭海报</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function closePoster() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('poster-page').classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 重新测试</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function restartTest() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentQuestion = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>scores = { S: 0, A: 0, C: 0, E: 0, U: 0, F: 0, I: 0, M: 0 };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('result-page').classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('home-page').classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
